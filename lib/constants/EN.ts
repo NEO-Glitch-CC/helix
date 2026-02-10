@@ -1,3 +1,5 @@
+import { Shield, Zap, Globe, Lock } from 'lucide-react'
+
 const PRODUCT_SUBMENU = [
   {
     title: "DATABASE",
@@ -71,4 +73,27 @@ const NAVBAR_MENU = [
   { label: "Company", dropdown: true, subMenu: COMPANY_SUBMENU },
 ]
 
-export { NAVBAR_MENU };
+const MAIN_FEATURES = [
+  {
+    icon: Shield,
+    title: 'DDoS Protection',
+    description: 'Attacks are automatically detected and mitigated.',
+  },
+  {
+    icon: Zap,
+    title: 'Content Caching',
+    description: 'Static assets are cached at the edge, so your apps stays fast.',
+  },
+  {
+    icon: Lock,
+    title: 'SSL and TLS Certificates',
+    description: 'Cloud automatically provisions and renews SSL certificates for your apps.',
+  },
+  {
+    icon: Globe,
+    title: 'Load Balancing',
+    description: 'Cloud automatically balances traffic as your apps scale.',
+  },
+];
+
+export { NAVBAR_MENU, MAIN_FEATURES };

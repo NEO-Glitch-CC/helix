@@ -24,9 +24,9 @@ const Icons = [
 
 const HeroSection = () => {
   return (
-    <div className='min-h-screen relative w-full'>
+    <div className='min-h-screen relative w-full border-b border-neutral-800'>
       <div style={{ width: '100%', height: '100vh', position: 'relative' }}>
-        <Beams
+        {/* <Beams
           beamWidth={2}
           beamHeight={23}
           beamNumber={20}
@@ -35,7 +35,7 @@ const HeroSection = () => {
           noiseIntensity={1.75}
           scale={0.2}
           rotation={30}
-        />
+        /> */}
         <div className="absolute inset-x-0 bottom-0 z-5 background-transparent">
           <div className="max-w-3/5 p-20 space-y-6">
             <div className="flex items-center gap-2">
