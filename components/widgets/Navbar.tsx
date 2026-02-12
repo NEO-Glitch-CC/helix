@@ -88,7 +88,6 @@ const Navbar = () => {
               <div className="">
                 <h1 className="text-2xl font-bold text-background">helix</h1>
               </div>
-              {/* Desktop Menu - Hidden on mobile */}
               <div className="hidden md:flex items-center gap-4">
                 {NAVBAR_MENU.map((data: NavMenuItem, i) => {
                   return (
@@ -110,16 +109,14 @@ const Navbar = () => {
               </div>
             </div>
             <div className="flex items-center gap-2 sm:gap-4">
-              {/* Mobile Menu Button - Visible only on mobile */}
               {isMobile && (
                 <button
                   onClick={() => setMobileSidebarOpen(!isMobileSidebarOpen)}
-                  className="md:hidden p-2 hover:bg-neutral-900 rounded transition-colors"
+                  className="md:hidden p-2 hover:bg-neutral-900 rounded-none transition-colors"
                 >
                   <Menu className="size-6 text-neutral-200" />
                 </button>
               )}
-              {/* Desktop Auth buttons - Hidden on small mobile */}
               <div className="hidden sm:flex items-center gap-2 sm:gap-4">
                 <Button variant={'ghost'} className='rounded-none group transition-all'>
                   <span className="text-sm text-neutral-200 font-normal group-hover:text-foreground transition-all">Login</span>
@@ -130,7 +127,6 @@ const Navbar = () => {
               </div>
             </div>
           </div>
-          {/* Desktop Submenu - Hidden on mobile */}
           <div className="hidden md:flex ps-38 gap-12">
             {NAVBAR_MENU.map((data: NavMenuItem, i) => {
               if (!data.dropdown || !data.subMenu) return null;

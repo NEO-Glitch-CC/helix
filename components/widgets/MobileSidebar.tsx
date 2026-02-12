@@ -71,7 +71,7 @@ const MobileSidebar = ({ isOpen, onClose }: MobileSidebarProps) => {
 
       <div
         ref={sidebarRef}
-        className="fixed top-14 left-0 h-screen w-64 bg-black border-r border-neutral-700 z-50 overflow-y-auto translate-x-full"
+        className="fixed top-14 left-0 h-screen w-80 bg-black border-r border-neutral-700 z-50 overflow-y-auto translate-x-full"
       >
         <div className="p-4 space-y-4">
           {NAVBAR_MENU.map((item: NavMenuItem, idx) => (
@@ -80,7 +80,7 @@ const MobileSidebar = ({ isOpen, onClose }: MobileSidebarProps) => {
                 <div className="space-y-2">
                   <button
                     onClick={() => toggleSubmenu(item.label)}
-                    className="w-full flex items-center justify-between p-3 hover:bg-neutral-900 rounded-lg transition-colors"
+                    className="w-full flex items-center justify-between p-3 hover:bg-neutral-900 rounded-none transition-colors"
                   >
                     <span className="text-neutral-200 font-medium">{item.label}</span>
                     <ChevronDown
@@ -105,12 +105,9 @@ const MobileSidebar = ({ isOpen, onClose }: MobileSidebarProps) => {
                               onClick={handleLinkClick}
                               className="block p-2 rounded hover:bg-neutral-900 transition-colors"
                             >
-                              <p className="text-sm text-neutral-300 hover:text-white">
+                              <span className="text-sm text-neutral-300 hover:text-white">
                                 {submenuItem.label}
-                              </p>
-                              <p className="text-xs text-neutral-500 mt-1">
-                                {submenuItem.description}
-                              </p>
+                              </span>
                             </Link>
                           ))}
                         </div>
@@ -122,7 +119,7 @@ const MobileSidebar = ({ isOpen, onClose }: MobileSidebarProps) => {
                 <Link
                   href={item.href || '/'}
                   onClick={handleLinkClick}
-                  className="block p-3 text-neutral-200 hover:bg-neutral-900 rounded-lg transition-colors"
+                  className="block p-3 text-neutral-200 hover:bg-neutral-900 rounded-none transition-colors"
                 >
                   {item.label}
                 </Link>
@@ -132,10 +129,10 @@ const MobileSidebar = ({ isOpen, onClose }: MobileSidebarProps) => {
 
           {/* Auth buttons */}
           <div className="space-y-2 pt-4 border-t border-neutral-700">
-            <button className="w-full p-3 text-neutral-200 border border-neutral-600 rounded hover:bg-neutral-900 transition-colors">
+            <button className="w-full p-3 text-neutral-200 border border-neutral-600 hover:bg-neutral-900 transition-colors">
               Login
             </button>
-            <button className="w-full p-3 text-white bg-neutral-200 rounded hover:bg-neutral-300 transition-colors font-medium">
+            <button className="w-full p-3 text-foreground  bg-neutral-200 hover:bg-neutral-300 transition-colors font-medium">
               Sign Up
             </button>
           </div>
