@@ -1,6 +1,6 @@
 'use client';
 
-import { MAIN_FEATURES } from '@/lib/constants/EN';
+import { MAIN_FEATURES, FEATURES_SECTION } from '@/lib/constants/EN';
 import Image from 'next/image';
 import React from 'react'
 import FeaturesImage1 from "../../assets/images/edge-network-XOAgynsg (1).png";
@@ -11,31 +11,26 @@ import { StripedPattern } from '../magicui/striped-pattern';
 const Features = () => {
 
   return (
-    <div className='w-full bg-black min-h-screen px-4 sm:px-6 md:px-[8%] lg:px-[12%] py-12 sm:py-16 md:py-20 space-y-12'>
+    <div className='w-full bg-black min-h-screen px-6 sm:px-8 md:px-[8%] lg:px-[12%] py-12 sm:py-16 md:py-20 space-y-12'>
       <div className='mb-8 sm:mb-12 md:mb-16'>
-        <h2 className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6'>Security and speed,<br />automatically configured</h2>
-        <p className='text-neutral-400 text-sm sm:text-base md:text-lg max-w-2xl'>Cloud provides enterprise-grade security and performance out of the box. No need to configure firewalls, load balancers, or caching layers — it's all done for you.</p>
+        <h2 className='text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6'>{FEATURES_SECTION.heading}</h2>
+        <p className='text-neutral-400 text-sm sm:text-base md:text-lg max-w-2xl'>{FEATURES_SECTION.description}</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-12">
-        <div className="h-80 sm:h-96 md:h-[600px] relative overflow-hidden border-b border-neutral-700 w-full">
+        <div className="min-h-80 sm:min-h-96 md:min-h-[600px] relative overflow-hidden border-b border-neutral-700 w-full">
           <div className="w-full flex flex-col sm:flex-row items-center">
-            <div className="w-full sm:w-1/2 h-28 sm:h-32 overflow-hidden relative border border-neutral-700 border-b-0 sm:border-b border-r-0 space-y-1">
-              <StripedPattern />
-              <div className="absolute z-20 insert-0 space-y-1 p-3">
-                <h3 className="text-white font-medium text-base sm:text-xl">20+ servers available</h3>
-                <p className="text-xs text-neutral-400 font-thin line-clamp-2">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            {FEATURES_SECTION.globalFeatures.map((feature, idx) => (
+              <div key={idx} className={`w-full sm:w-1/2 h-28 sm:h-32 overflow-hidden relative border border-neutral-700 ${idx === 0 ? 'border-b-0 sm:border-b sm:border-r-0' : 'border-b-0'} space-y-1`}>
+                <StripedPattern />
+                <div className="absolute z-20 insert-0 space-y-1 p-3">
+                  <h3 className="text-white font-medium text-2xl md:text-base sm:text-xl">{feature.title}</h3>
+                  <p className="text-md md:text-xs text-neutral-400 font-thin line-clamp-2">{feature.description}</p>
+                </div>
               </div>
-            </div>
-            <div className="w-full sm:w-1/2 h-28 sm:h-32 overflow-hidden relative border border-neutral-700 border-b-0 space-y-1">
-              <StripedPattern />
-              <div className="absolute z-20 insert-0 space-y-1 p-3">
-                <h3 className="text-white font-medium text-base sm:text-xl">20+ servers available</h3>
-                <p className="text-xs text-neutral-400 font-thin line-clamp-2">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-              </div>
-            </div>
+            ))}
           </div>
-          <div className="relative w-full h-full border border-neutral-700 flex flex-col items-center justify-center">
+          <div className="relative w-full h-125 md:h-full border border-neutral-700 flex flex-col items-center justify-center">
             <Globe className='' config={{
               width: 800,
               height: 800,

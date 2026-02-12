@@ -5,6 +5,7 @@ import Beams from '../Beams'
 import { Button } from '../ui/button';
 import { Triangle } from 'lucide-react';
 import { Marquee } from '../ui/marquee';
+import { HERO_SECTION } from '@/lib/constants/EN';
 import lenovoLogo from "../../assets/icons/lenovo-logo.svg";
 import metaLogo from "../../assets/icons/meta-logo.svg";
 import nvidiaLogo from "../../assets/icons/nvidia-logo-putih.svg";
@@ -26,7 +27,7 @@ const HeroSection = () => {
   return (
     <div className='min-h-screen relative w-full border-b border-neutral-800'>
       <div style={{ width: '100%', height: '100vh', position: 'relative' }}>
-        <Beams
+        {/* <Beams
           beamWidth={2}
           beamHeight={23}
           beamNumber={20}
@@ -35,20 +36,21 @@ const HeroSection = () => {
           noiseIntensity={1.75}
           scale={0.2}
           rotation={30}
-        />
+        /> */}
         <div className="absolute inset-x-0 bottom-0 z-5 background-transparent">
           <div className="w-full px-4 sm:px-6 md:px-8 lg:px-20 lg:max-w-5xl py-8 sm:py-12 md:py-16 lg:py-20 space-y-6">
             <div className="flex items-center gap-2">
               <Triangle className='size-3 text-red-500 rotate-90' fill='#fb2c36' />
-              <span className="text-neutral-500 font-medium text-xs sm:text-sm md:text-base">HELIX: A DATABASE COMPANY</span>
+              <span className="text-neutral-500 font-medium text-xs sm:text-sm md:text-base">{HERO_SECTION.badge}</span>
             </div>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal text-background leading-tight">Lorem ipsum, dolor sit amet consectetur adipisicing.</h1>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal text-background leading-tight">{HERO_SECTION.heading}</h1>
+            <p className="text-neutral-400 text-base sm:text-lg md:text-xl max-w-3xl leading-relaxed">{HERO_SECTION.subheading}</p>
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-2">
               <Button variant={'outline'} className='rounded-none w-full sm:w-auto'>
-                <span className="text-sm sm:text-base md:text-md font-normal">Get Started</span>
+                <span className="text-sm sm:text-base md:text-md font-normal">{HERO_SECTION.primaryButton}</span>
               </Button>
               <Button variant={'ghost'} className='rounded-none w-full sm:w-auto group transition-all'>
-                <span className="text-sm sm:text-base md:text-md text-neutral-200 font-normal group-hover:text-foreground transition-all">Read the docs</span>
+                <span className="text-sm sm:text-base md:text-md text-neutral-200 font-normal group-hover:text-foreground transition-all">{HERO_SECTION.secondaryButton}</span>
               </Button>
             </div>
           </div>
